@@ -19,7 +19,7 @@ const corsOptions = {
   credentials: true,
 };
 
-app.use(cors(corsOptions));
+app.use(cors());
 // Increase the limit for JSON payload
 app.use(express.json({ limit: '10mb' })); // You can adjust the limit as needed
 
