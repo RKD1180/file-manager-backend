@@ -19,7 +19,7 @@ const corsOptions = {
   credentials: true,
 };
 
-app.use(cors());
+app.use(cors(corsOptions));
 // Increase the limit for JSON payload
 app.use(express.json({ limit: '10mb' })); // You can adjust the limit as needed
 
@@ -37,7 +37,7 @@ app.use("/auth", authRoutes);
 app.use("/file", verifyToken, fileRoutes);
 
 app.use("/", (req, res) => {
-  res.json({ message: "Backend Working" });
+ return res.json({ message: "Backend Working" });
 });
 
 app.listen(PORT, () => {
